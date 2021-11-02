@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name = "author">
+    <title>Document</title>
+    <style>
+        div{
+            margin:0 auto;
+            width: 500px;
+        }
+        #jumpTo{
+            color:red;
+            font-size:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Congratulations, payment has been made.</h2>
+        <span id="jumpTo">10</span> Seconds, return to previous page
+        <p><button>Return now</button></p>
+    </div>
+    <script>
+        window.onload = function(){
+            let timer = 10;
+            setInterval(() => {
+                timer--;
+                document.getElementById('jumpTo').innerText = timer;
+                if(timer==0){
+                   location.href = "https://www.amazon.com"
+                }
+            }, 1000);
+        }
+
+        document.getElementsByTagName('button')[0].onclick = function(){
+            location.href = "https://www.amazon.com"
+        }
+    </script>
+        
+</body>
+</html>
