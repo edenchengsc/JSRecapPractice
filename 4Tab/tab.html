@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            ul,li{
+                margin:0;
+                padding:0;
+                list-style: none;
+            }
+            ul{
+                overflow:hidden;
+            }
+            li{
+                width: 100px;
+                height: 40px;
+                background-color: #eee;
+                border:1px solid#ccc;
+                float: left;
+                line-height: 40px;
+                text-align: center;
+            }
+            div{
+                width: 406px;
+                height: 406px;
+                border:1px solid#ccc;
+            }
+            img{
+                width: 406px;
+                height: 406px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>type1</li>
+            <li>type2</li>
+            <li>type3</li>
+            <li>type4</li>
+        </ul>
+        <div>
+            <img src="./1.jpg" alt="" style="display: block;">
+            <img src="./2.jpg" alt="">
+            <img src="./3.jpg" alt="">
+            <img src="./4.jpg" alt="">
+        </div>
+        <script>
+            let li = document.getElementsByTagName('li');
+            let img = document.getElementsByTagName('img');
+            
+            for(let i = 0;i<li.length;i++){
+                li[i].index = i;
+                li[i].onmouseover = function(){
+                    for(let j = 0; j < img.length; j++){
+                        img[j].style.display = 'none';
+                    }
+                    this.style.backgroundColor = 'yellow'
+                    img[this.index].style.display = 'block';
+                } 
+                li[i].onmouseout = function(){
+                    li[i].style.backgroundColor = '#eee'
+                } 
+            }
+        </script>
+    </body>
+</html>
